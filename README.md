@@ -239,6 +239,8 @@ if torch.cuda.device_count() > 1:
 - vd sau khi chia `2` fold, train `3` model ở fold 1 và predict ở fold 2 => sử dụng predict ở fold 1 và target ở fold 1 để train optimize model, sau đó evaluate ở fold2, và làm tương tự khi train fold 2 và predict fold 1 
 ![](screenshot/ensemble.png)
 - sử dụng phương pháp tương tự như việc tìm hyperparameters tốt nhất => sử dụng `optimize function`, tìm cách `MINIMIZE` nó (vì vậy fai dùng negative auc)  bằng cách sử dụng `scipy fmin` (tham khảo page 275-277)
+    - fmin: https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.fmin.html
+    - dirichlet => tạo distribution thỏa mãn điều kiện value > 0 và tổng = 1: https://numpy.org/doc/stable/reference/random/generated/numpy.random.dirichlet.html
 
 
 # reproducible code & model serving
